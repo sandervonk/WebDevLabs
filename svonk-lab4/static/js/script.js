@@ -73,6 +73,8 @@ $("form *").on("input change", (e) => {
   $el = $(el);
 
   result = el.checkValidity();
-  $el.toggleClass("invalid", !result);
-  $el.next("p.validationText").text(!result ? el.validationMessage : "");
+  $el
+    .toggleClass("invalid", !result)
+    .next("p.validationText")
+    .text(!result ? el.validationMessage : "");
 });
