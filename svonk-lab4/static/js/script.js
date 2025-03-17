@@ -64,7 +64,8 @@ function showList() {
 
 $("#moreless").click((e) => {
   $el = $(e.target);
-  $el.text($("#more").toggle() ? "Read less" : "Read more");
+  $("#more").toggle();
+  $el.text($("#more").is(":visible") ? "Read Less" : "Read More");
 });
 
 $("form *").on("input change", (e) => {
