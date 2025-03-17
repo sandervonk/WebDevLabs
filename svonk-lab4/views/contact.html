@@ -6,9 +6,10 @@
     <meta name="description" content="Sander Vonk professional website" />
     <link rel="stylesheet" href="../static/css/styles.css" />
     <title>Sander Vonk</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="../static/js/script.js" defer></script>
   </head>
-  <body>
+  <body onload="addYear()">
     <header>
       <h1 id="webname">Sander Vonk</h1>
       <nav>
@@ -41,13 +42,16 @@
       <form style="display: flex; flex-flow: column; align-items: flex-start">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" placeholder="Jane Doe" required />
+        <p class="validationText"></p>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" placeholder="jane@example.com" required />
+        <p class="validationText"></p>
         <label for="comment">Comment</label>
         <textarea name="comment" id="comment" required></textarea>
+        <p class="validationText"></p>
         <input type="submit" />
       </form>
     </div>
-    <footer>&copy; 2025 Sander Vonk, All Rights Reserved</footer>
+    <footer>&copy; <span id="copyYear"></span> Sander Vonk, All Rights Reserved</footer>
   </body>
 </html>

@@ -26,16 +26,16 @@ function findTheBanana(A) {
     if (A[i] === "Banana") window.alert(`found the Banana in ${i}`);
   }
 }
-findTheBanana(L1);
-findTheBanana(L2);
+// findTheBanana(L1);
+// findTheBanana(L2);
 
 function findTheBananaEach(A) {
   for (item in A) {
     if (item === "Banana") window.alert(`We found a bananna in the array`);
   }
 }
-findTheBananaEach(L1);
-findTheBananaEach(L2);
+// findTheBananaEach(L1);
+// findTheBananaEach(L2);
 
 function greetingFunc() {
   const d = new Date();
@@ -51,3 +51,27 @@ function greetingFunc() {
   if (el) el.innerHTML = greeting;
 }
 greetingFunc();
+
+function addYear() {
+  year = new Date().getFullYear();
+  document.getElementById("copyYear").innerHTML = year;
+}
+
+function showList() {
+  document.querySelector("button[onclick='showList()'] + ul").style.display = "block";
+  document.querySelector("button[onclick='showList()']").style.display = "none";
+}
+
+$("#moreless").click((e) => {
+  $el = $(e.target);
+  $el.text($("#more").toggle() ? "Read less" : "Read more");
+});
+
+$("form *").on("input change", (e) => {
+  el = e.target;
+  $el = $(el);
+
+  result = el.checkValidity();
+  $el.toggleClass("invalid", !result);
+  $el.next("p.validationText").text(!result ? el.validationMessage : "");
+});

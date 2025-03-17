@@ -58,3 +58,14 @@ a[href] {
 a[href]:hover {
   text-decoration: underline;
 }
+
+p.validationText {
+  color: red;
+  font-size: 0.75em;
+  min-height: 1em;
+  margin-bottom: -0.5em;
+}
+
+form .invalid {
+  outline: solid 2px red;
+}

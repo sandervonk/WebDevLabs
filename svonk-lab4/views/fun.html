@@ -8,7 +8,7 @@
     <title>Sander Vonk</title>
     <script src="../static/js/script.js" defer></script>
   </head>
-  <body>
+  <body onload="addYear()">
     <header>
       <h1 id="webname">Sander Vonk</h1>
       <nav>
@@ -20,13 +20,14 @@
     </header>
     <div class="main">
       <h2>Things I love to do for fun</h2>
-      <ul>
+      <button onclick="showList()">Click to see...</button>
+      <ul style="display: none">
         <li>Cook/bake</li>
         <li>Volunteer</li>
         <li>Swim</li>
         <li>Work on web projects</li>
       </ul>
     </div>
-    <footer>&copy; 2025 Sander Vonk, All Rights Reserved</footer>
+    <footer>&copy; <span id="copyYear"></span> Sander Vonk, All Rights Reserved</footer>
   </body>
 </html>
