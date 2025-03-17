@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Sander Vonk" />
+    <meta name="keywords" content="Carnegie Mellon University, Information Systems" />
+    <meta name="description" content="Sander Vonk professional website" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <title>Sander Vonk</title>
+    <script src="../static/js/script.js" defer></script>
+  </head>
+  <body onload="addYear()">
+    <header>
+      <h1 id="webname">Sander Vonk</h1>
+      <nav>
+        <a href="../">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact Me</a>
+        <a href="fun.html">For fun</a>
+      </nav>
+    </header>
+    <div class="main">
+      <h2>Things I love to do for fun</h2>
+      <button onclick="showList()">Click to see...</button>
+      <ul style="display: none">
+        <li>Cook/bake</li>
+        <li>Volunteer</li>
+        <li>Swim</li>
+        <li>Work on web projects</li>
+      </ul>
+    </div>
+    <footer>&copy;<span id="copyYear"></span>Sander Vonk, All Rights Reserved</footer>
+  </body>
+</html>

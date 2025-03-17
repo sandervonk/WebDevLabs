@@ -45,7 +45,7 @@ function greetingFunc() {
   if (h < 12) greeting = "Good morning";
   else if (h < 18) greeting = "Good afternoon";
   else if (h < 20) greeting = "Good evening";
-  if (20 < h < 24 || h < 5) greeting = "Good night";
+  if ((h >= 20 && h < 24) || h < 5) greeting = "Good night";
 
   const el = document.getElementById("greeting");
   if (el) el.innerHTML = greeting;
