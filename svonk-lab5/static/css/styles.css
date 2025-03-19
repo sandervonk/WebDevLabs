@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: Roboto, Arial, sans-serif;
+  padding: 5px;
+  margin: 5px;
+}
+
+header {
+  color: #8773ee;
+  background: #8773ee;
+  a[href] {
+    color: white;
+  }
+}
+
+#webname {
+  background-color: #fcda69;
+}
+
+table {
+  width: fit-content;
+  tr:first-child {
+    background-color: #fcda69;
+    color: #8773ee;
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
+
+form {
+  * {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  input[type="submit"] {
+    background: #8773ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+}
+
+a[href] {
+  text-decoration: none;
+  color: #8773ee;
+  font-weight: bold;
+  margin-right: 15px;
+}
+a[href]:hover {
+  text-decoration: underline;
+}
+
+p.validationText {
+  color: red;
+  font-size: 0.75em;
+  min-height: 1em;
+  margin-bottom: -0.5em;
+}
+
+form .invalid {
+  outline: solid 2px red;
+}
