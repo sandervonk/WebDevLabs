@@ -19,38 +19,52 @@
         <a href="fun.html">For fun</a>
       </nav>
     </header>
-    <div class="main">
-      <h2>Contact Me</h2>
-      <table>
-        <tr>
-          <th>Contact Method</th>
-          <th>Information</th>
-        </tr>
-        <tr>
-          <td>Email:</td>
-          <td><a href="mailto:sander@svonk.me">sander@svonk.me</a></td>
-        </tr>
-        <tr>
-          <td>Phone:</td>
-          <td><a href="tel:+6503830388">+1 (650) 383-0388</a></td>
-        </tr>
-        <tr>
-          <td>Linkedin:</td>
-          <td><a href="https://linkedin.com/in/sandercvonk">Linkedin Profile</a></td>
-        </tr>
-      </table>
-      <form style="display: flex; flex-flow: column; align-items: flex-start">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Jane Doe" required />
-        <p class="validationText"></p>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="jane@example.com" required />
-        <p class="validationText"></p>
-        <label for="comment">Comment</label>
-        <textarea name="comment" id="comment" required></textarea>
-        <p class="validationText"></p>
-        <input type="submit" />
-      </form>
+    <div class="mainLayout">
+      <div>
+        <h2>Find Me</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d151591.43502371648!2d92.15134659203653!3d11.57415574555858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30863a35c7c1b4e1%3A0x22f2e4fd1e2aa9c5!2sNorth%20Sentinel%20Island!5e0!3m2!1sen!2sus!4v1742398006520!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div>
+        <h2>Contact Me</h2>
+        <table>
+          <tr>
+            <th>Contact Method</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><a href="mailto:sander@svonk.me">sander@svonk.me</a></td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td><a href="tel:+6503830388">+1 (650) 383-0388</a></td>
+          </tr>
+          <tr>
+            <td>Linkedin:</td>
+            <td><a href="https://linkedin.com/in/sandercvonk">Linkedin Profile</a></td>
+          </tr>
+        </table>
+        <form style="display: flex; flex-flow: column; align-items: flex-start">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Jane Doe" required />
+          <p class="validationText"></p>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="jane@example.com" required />
+          <p class="validationText"></p>
+          <label for="comment">Comment</label>
+          <textarea name="comment" id="comment" required></textarea>
+          <p class="validationText"></p>
+          <input type="submit" />
+        </form>
+      </div>
     </div>
     <footer>&copy;<span id="copyYear"></span>Sander Vonk, All Rights Reserved</footer>
   </body>

@@ -69,3 +69,31 @@ p.validationText {
 form .invalid {
   outline: solid 2px red;
 }
+
+.funIMG {
+  border-radius: 50%;
+  width: 75%;
+  margin: 0 auto;
+  height: auto;
+}
+
+.container {
+  border-radius: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000080;
+}
+
+.mainLayout {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: space-between;
+  justify-content: space-between;
+  div {
+    flex: 350px 1 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}

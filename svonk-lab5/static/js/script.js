@@ -57,10 +57,10 @@ function addYear() {
   document.getElementById("copyYear").innerHTML = year;
 }
 
-function showList() {
-  document.querySelector("button[onclick='showList()'] + ul").style.display = "block";
-  document.querySelector("button[onclick='showList()']").style.display = "none";
-}
+// function showList() {
+//   document.querySelector("button[onclick='showList()'] + ul").style.display = "block";
+//   document.querySelector("button[onclick='showList()']").style.display = "none";
+// }
 
 $("#moreless").click((e) => {
   $el = $(e.target);
@@ -78,3 +78,16 @@ $("form *").on("input change", (e) => {
     .next("p.validationText")
     .text(!result ? el.validationMessage : "");
 });
+
+async function updateAdvice() {
+  fetch("https://api.adviceslip.com/advice").then((response) => {
+    response
+      .json()
+      .then((data) => {
+        document.getElementById("adviceText").innerHTML = data.slip.advice;
+      })
+      .catch((error) => {
+        console.error("Error parsing advice:", error);
+      });
+  });
+}
