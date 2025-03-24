@@ -91,3 +91,15 @@ async function updateAdvice() {
       });
   });
 }
+
+$("nav[toggle] .toggle").click((e) => {
+  $el = $(e.target);
+  $nav = $el.parent("nav[toggle]");
+  $nav.toggleClass("closed");
+});
+
+document.querySelectorAll("nav a[href]").forEach((el) => {
+  if (window.location.pathname.endsWith(el.getAttribute("href").replace("./", ""))) {
+    el.classList.add("active");
+  }
+});

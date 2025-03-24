@@ -12,6 +12,12 @@ header {
   a[href] {
     color: white;
   }
+  a[href].active {
+    border-bottom: solid 1px white;
+  }
+  a[href].active:hover {
+    text-decoration: none;
+  }
 }
 
 #webname {
