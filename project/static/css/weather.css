@@ -1,0 +1,292 @@
+/* ------------------------------------------------------------------------------ */
+/* - © 2023 Sander Vonk | Requires permission for replication or commercial use - */
+/* ------------------------------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --card-bg: #ffffff29;
+  --temp-bg: #ffffffaa;
+  --card-solid: #ffffff;
+  --bg-appx: #1b88bf;
+  --color-text: white;
+  --color-sat: 100%;
+  --page-bg: radial-gradient(circle, #3ab7f7 0%, #2ba0db 45%, #0d72a6 100%);
+}
+body.dark {
+  --page-bg: radial-gradient(circle, #2c2d2e 0%, #1d1f20 45%, #060708 100%);
+  --color-sat: 0%;
+}
+:root {
+  --anim-in: 0.25s;
+  --anim-out: 0.5s;
+}
+
+#weather {
+  /* wait for content to load */
+  :has(h2) {
+    background: var(--page-bg);
+    border-radius: 10px;
+  }
+
+  h2 {
+    margin-right: auto;
+    margin-top: -10px;
+    color: white;
+  }
+
+  #forecast_card_row {
+    overflow-x: auto;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  #forecast_card_row > .forecast_card {
+    /* sizing */
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: calc(1.5rem + 35px);
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    /* text */
+    color: var(--color-text);
+    font-weight: 600;
+    font-family: "Montserrat", Roboto, sans-serif;
+    text-align: center;
+
+    /* general styles */
+    border-radius: 10px;
+    cursor: pointer;
+
+    /* container properties */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    /* background - glass effect */
+    background: hsla(200, var(--color-sat), 81%, 0.12);
+    border: 1px solid hsla(200, var(--color-sat), 81%, 0.29);
+    box-shadow: 0 4px 30px hsla(0, 0%, 0%, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    /* transition */
+    transition: background-color ease-out, border-color ease-out, transform ease-out;
+    transition-duration: var(--anim-out);
+  }
+
+  #forecast_card_row > .forecast_card:hover {
+    /* bluer glassmorphism */
+    background: var(--card-bg);
+    border: 1px solid hsla(0, 0%, 100%, 0.26);
+
+    /* transform */
+    transform: scale(1.05);
+    transition-duration: var(--anim-in);
+  }
+
+  #forecast_card_row > .forecast_card > .forecast_card__icon {
+    /* sizing */
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 3 / 2;
+    margin-bottom: -15px;
+
+    /* events */
+    pointer-events: none;
+    user-select: none;
+    filter: none;
+
+    /* zoom effect */
+    transition: transform ease-out, filter ease-out;
+    transition-duration: var(--anim-out);
+    transform: scale(0.9);
+  }
+
+  #forecast_card_row > .forecast_card:hover > .forecast_card__icon {
+    transform: scale(1) rotate(3deg);
+    transition-duration: var(--anim-in);
+  }
+
+  body.dark #forecast_card_row > .forecast_card:not(:hover) > .forecast_card__icon {
+    filter: saturate(0.7);
+  }
+
+  #forecast_card_row > .forecast_card p {
+    /* layout */
+    margin: 0;
+    padding: 0;
+
+    /* events */
+    pointer-events: none;
+    user-select: none;
+  }
+  #forecast_card_row > .forecast_card p.forecast_card__temp {
+    /* glassmorphism effect */
+    background: hsla(200, var(--color-sat), 81%, 0.12);
+    box-shadow: 0 4px 30px hsla(0, 0%, 0%, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid hsla(200, var(--color-sat), 81%, 0.29);
+
+    /* text formatting */
+    color: var(--color-text);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+
+    /* size and position */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    padding: 6px 10px;
+    border-radius: 7px;
+  }
+
+  /* header */
+  body > header {
+    /* text */
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: Lato, Montserrat, "Open Sans", sans-serif;
+
+    /* sizing */
+    height: 5rem;
+    padding: 10px;
+    width: 100%;
+
+    /* glassmorphism effect */
+
+    background: hsla(200, var(--color-sat), 81%, 0.12);
+    box-shadow: 0 4px 30px hsla(0, 0%, 0%, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border-bottom: 1px solid hsla(200, var(--color-sat), 81%, 0.29);
+
+    /* layout */
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    z-index: 1;
+  }
+
+  /* header contents */
+
+  body > header > div {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 100%;
+  }
+
+  body > header > div.header_text {
+    flex-grow: 3;
+  }
+  body > header > div.header_search {
+    max-width: 250px;
+    padding: 0.25rem;
+    position: relative;
+  }
+  body > header .header_search_input {
+    /* layout */
+    width: 100%;
+    height: 100%;
+    padding: 0 1.25rem;
+    padding-right: 2.75rem;
+    max-width: unset;
+    outline: none;
+
+    /* glassmorphism */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px hsla(0, 0%, 0%, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    background: var(--card-bg);
+    border: 1px solid hsla(0, 0%, 100%, 0.26);
+
+    /* text */
+    color: #ffffffcc;
+    font-size: 0.75em;
+    font-weight: 600;
+    font-family: Lato, Montserrat, "Open Sans", sans-serif;
+  }
+
+  body > header .header_search_input::placeholder {
+    color: #ffffff40;
+  }
+
+  body > header > .header_search > #city_submit {
+    /* position and size */
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    height: 1.75rem;
+    width: 1.75rem;
+
+    /* general style */
+    border-radius: 5px;
+    background-image: url(../img/submit.png);
+    background-image: url(../img/submit.svg);
+    background-size: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* glassmorphism */
+    background-color: hsla(202, var(--color-sat), 98%, 0.39);
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(8.3px);
+    border: 1px solid hsla(202, var(--color-sat), 98%, 0.59);
+  }
+
+  /* weather text */
+
+  .current-weather {
+    padding: 20px;
+    font-weight: 600;
+    font-family: "Montserrat", Roboto, sans-serif;
+
+    /* center */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #forecast {
+    height: 100%;
+  }
+  #current_text {
+    color: white;
+    font-size: 1.25em;
+    text-align: center;
+  }
+  .temp_text::after {
+    content: "°F";
+  }
+
+  #current_min_temp::before {
+    content: "ꜜ ";
+  }
+  #current_max_temp::before {
+    content: "ꜛ ";
+  }
+  #current_icon {
+    width: 100%;
+    max-width: 450px;
+    max-height: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+}

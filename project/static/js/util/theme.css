@@ -1,0 +1,36 @@
+:root {
+  /*toast*/
+  --toast-bg: #edebe4;
+  --toast-bg-transparent: #edebe4aa;
+  --toast-text: #474743;
+  --toast-border: hsl(0, 0%, 78%);
+  --toast-secondary: hsl(0, 0%, 90%);
+  /*popup*/
+  --primary: #658023;
+  --primary-container: #dde7bf;
+  --on-primary: #ffffff;
+  --on-primary-container: #001f26;
+  --popup-bg: #edebe4;
+  --on-popup-bg: #474743;
+  --popup-red: #93000a;
+}
+
+/*! auto-generated, change this later */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /*toast*/
+    --toast-bg: #474743;
+    --toast-bg-transparent: #474743aa;
+    --toast-text: #edebe4;
+    --toast-border: hsl(0, 0%, 22%);
+    --toast-secondary: hsl(0, 0%, 10%);
+    /*popup*/
+    --primary: #658023;
+    --primary-container: #dde7bf;
+    --on-primary: #ffffff;
+    --on-primary-container: #001f26;
+    --popup-bg: #474743;
+    --on-popup-bg: #edebe4;
+    --popup-red: #93000a;
+  }
+}
