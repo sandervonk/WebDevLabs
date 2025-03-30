@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sander Vonk" />
+    <meta name="keywords" content="Carnegie Mellon University, Information Systems" />
+    <meta name="description" content="Sander Vonk professional website" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <title>The Duquesne Incline</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="../static/js/script.js" defer type="module"></script>
+    <link rel="stylesheet" href="../static/css/weather.css" />
+    <link rel="stylesheet" href="../static/js/util/util.css" />
+    <link rel="stylesheet" href="../static/js/util/theme.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../static/images/logo.png" alt="Incline Logo" />
+      <h2>The Duquesne Incline</h2>
+      <nav>
+        <ul>
+          <li><a href="../" match="/project">Home</a></li>
+          <li><a href="visit.html" match="views/visit">Visit</a></li>
+          <li><a href="experiences.html" match="views/experiences">Experiences</a></li>
+          <li><a href="shop.html" match="views/shop">Shop</a></li>
+          <li><a contact>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>Weather Forecast</h1>
+        <div id="weather">Loading...</div>
+      </div>
+      <div>
+        <h1>Our Location</h1>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.6008009571087!2d-80.01754790000001!3d40.43983759999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f6af24753323%3A0x391d7b79fc54985b!2sDuquesne%20Incline!5e0!3m2!1sen!2sus!4v1743348736943!5m2!1sen!2sus"
+          width="100%"
+          height="600"
+          style="border: 0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <p>The incline is located at <b>1197 W Carson St, Pittsburgh, PA 15219. We are open 365 days a year!</b></p>
+      </div>
+      <div>
+        <h1>Groups</h1>
+        <br />
+        <p>We welcome groups of all sizes to the incline. We offer special discounted rates for groups of 10 or more. Please contact us for more information on group rates and self-guided tours.</p>
+
+        <div>
+          <h2>Group Rates</h2>
+          <div class="card-row rates-row">
+            <div class="card">
+              <h3>Adults (Ages 12-64)</h3>
+              <div class="rates-pair">
+                <div class="rate-side">
+                  <span class="rate-amount">$1.75</span>
+                  <span class="rate-context">Each Way</span>
+                </div>
+                <hr />
+                <div class="rate-side">
+                  <span class="rate-amount">$3.50</span>
+                  <span class="rate-context">Round Trip</span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Children (Ages 6-11)</h3>
+              <div class="rates-pair">
+                <div class="rate-side">
+                  <span class="rate-amount">$1.00</span>
+                  <span class="rate-context">Each Way</span>
+                </div>
+                <hr />
+                <div class="rate-side">
+                  <span class="rate-amount">$1.75</span>
+                  <span class="rate-context">Round Trip</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Self-Guided Tours</h2>
+          <p>Self-guided walks are a great way to explore the incline at your own pace. Our self-guided walks include the following:</p>
+          <ul>
+            <li>A pictorial history of Pittsburgh's industry, inclines, sports venues, and natural disasters.</li>
+            <li>A visit to the machine room to observe the original hoisting equipment from 1877 in operation.</li>
+            <li>A panoramic view of Downtown Pittsburgh from the observation deck 400 feet above the three rivers.</li>
+            <li>Plan to allow time for photos and a visit to our gift shop for post cards and souvenirs.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <img src="../static/images/footer.png" alt="An outside view of the incline building" height="100%" width="auto" />
+      <p>&copy; 2025 The Duquesne Incline</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
+        vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet.
+      </p>
+    </footer>
+  </body>
+</html>

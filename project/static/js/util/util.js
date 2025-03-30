@@ -41,7 +41,7 @@ class Toast {
 class ErrorToast extends Toast {
   constructor(message, err, duration = 2000, action = "") {
     message += ": " + err;
-    super(message, "default", duration, "svonk-util/assets/error-icon.svg", action);
+    super(message, "default", duration, "../static/js/util/assets/error-icon.svg", action);
     return console.error(
       "%c💬 [UTIL]%c " + message,
 
@@ -52,18 +52,18 @@ class ErrorToast extends Toast {
 }
 class WarningToast extends Toast {
   constructor(message, duration, action = "") {
-    super(message, "default", duration, "svonk-util/assets/warning-icon.svg", action);
+    super(message, "default", duration, "../static/js/util/assets/warning-icon.svg", action);
   }
 }
 
 class InfoToast extends Toast {
   constructor(message, duration, action = "") {
-    super(message, "default", duration, "svonk-util/assets/info-icon.svg", action);
+    super(message, "default", duration, "../static/js/util/assets/info-icon.svg", action);
   }
 }
 class SuccessToast extends Toast {
   constructor(message, duration, action = "") {
-    super(message, "default", duration, "svonk-util/assets/success-icon.svg", action);
+    super(message, "default", duration, "../static/js/util/assets/success-icon.svg", action);
   }
 }
 /** POPUP **/
@@ -132,7 +132,7 @@ $(document.body).on("click", ".popup-overlay", function () {
 
 /** Other **/
 function placeholderToast() {
-  return new Toast("This feature hasn't been implemented yet, sorry! 🤫", "default", 1500, "svonk-util/assets/unimplemented-icon.svg");
+  return new Toast("This feature hasn't been implemented yet, sorry! 🤫", "default", 1500, "../static/js/util/assets/unimplemented-icon.svg");
 }
 //! placeholder action
 $("[placeholdaction]").click(function () {
