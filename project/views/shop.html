@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sander Vonk" />
+    <meta name="keywords" content="Carnegie Mellon University, Information Systems" />
+    <meta name="description" content="Sander Vonk professional website" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <title>The Duquesne Incline | Gift Shop</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="../static/js/script.js" type="module"></script>
+    <link rel="stylesheet" href="../static/js/util/util.css" />
+    <link rel="stylesheet" href="../static/js/util/theme.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../static/images/logo.png" alt="Incline Logo" />
+      <h2>The Duquesne Incline</h2>
+      <nav>
+        <ul>
+          <li><a href="../" data-match="/project">Home</a></li>
+          <li><a href="visit.html" data-match="views/visit">Visit</a></li>
+          <li><a href="experiences.html" data-match="views/experiences">Experiences</a></li>
+          <li><a href="shop.html" data-match="views/shop">Shop</a></li>
+          <li><a onClick="contactForm()">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="img-grid">
+        <img src="../static/images/gift-shop-wall.png" alt="Gift Shop Item: Wall of items" />
+        <img src="../static/images/gift-shop-glasses.png" alt="Gift Shop Item: Shot glasses" />
+        <img src="../static/images/gift-shop-model.png" alt="Gift Shop Item: Model of the carriage" />
+        <div
+          onclick="openLightbox([
+         [ '../static/images/gift-shop-dishes.png', 'A full assortment of Wendell August Forge metal plates'],
+         ['../static/images/gift-shop-wall.png', 'We offer unique items and one-of-a-kind custom shirts in our shop'],
+         ['../static/images/gift-shop-glasses.png', 'Many shot glasses are for sale including a slanted one'],
+         ['../static/images/gift-shop-model.png', 'Handmade Incline wooden ornaments are only available here'],
+        ])"
+        >
+          <img src="../static/images/gift-shop-dishes.png" alt="Gift Shop Item: Engraved metal dishes" />
+        </div>
+      </div>
+      <div>
+        <h1>Our Selection</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae lorem neque. Vivamus viverra vel velit ac mollis. Curabitur molestie varius nunc eu ornare. Quisque nec leo mattis elit
+          blandit tincidunt. Aenean consectetur mauris sit amet lacinia tempor. Ut at enim maximus, malesuada nisi at, condimentum lectus. Nulla at ultricies ante. Nunc tristique risus sed fermentum
+          mollis. Suspendisse tincidunt mattis porttitor. Praesent sollicitudin neque nec maximus gravida. Quisque vitae diam tellus.
+        </p>
+      </div>
+    </main>
+    <footer>
+      <img src="../static/images/footer.png" alt="An outside view of the incline building" height="100%" width="auto" />
+      <p>&copy; 2025 The Duquesne Incline</p>
+      <address>
+        <span>Address: <a href="visit.html#directions">1197 W Carson St, Pittsburgh, PA 15219</a></span>
+        <br />
+        Phone Number: <a href="tel:+4123811665">412.381.1665</a>
+        <br />
+        Fax: 412.381.1943
+        <br />
+        Email: <a href="mailto:duq.incline@duquesneincline.org">duq.incline@duquesneincline.org</a>
+      </address>
+    </footer>
+  </body>
+</html>

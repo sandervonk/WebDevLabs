@@ -23,7 +23,7 @@ body.dark {
 
 #weather {
   /* wait for content to load */
-  :has(h2) {
+  &:has(h2) {
     background: var(--page-bg);
     border-radius: 10px;
   }

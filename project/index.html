@@ -7,9 +7,11 @@
     <meta name="keywords" content="Carnegie Mellon University, Information Systems" />
     <meta name="description" content="Sander Vonk professional website" />
     <link rel="stylesheet" href="static/css/styles.css" />
-    <title>The Duquesne Incline</title>
+    <title>The Duquesne Incline | Home</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-    <script src="static/js/script.js" defer type="module"></script>
+    <script src="static/js/script.js" type="module"></script>
+    <link rel="stylesheet" href="static/js/util/util.css" />
+    <link rel="stylesheet" href="static/js/util/theme.css" />
   </head>
   <body>
     <header>
@@ -17,11 +19,11 @@
       <h2>The Duquesne Incline</h2>
       <nav>
         <ul>
-          <li><a href="./" match="/project">Home</a></li>
-          <li><a href="views/visit.html" match="views/visit">Visit</a></li>
-          <li><a href="views/experiences.html" match="views/experiences">Experiences</a></li>
-          <li><a href="views/shop.html" match="views/shop">Shop</a></li>
-          <li><a contact>Contact</a></li>
+          <li><a href="./" data-match="/project">Home</a></li>
+          <li><a href="views/visit.html" data-match="views/visit">Visit</a></li>
+          <li><a href="views/experiences.html" data-match="views/experiences">Experiences</a></li>
+          <li><a href="views/shop.html" data-match="views/shop">Shop</a></li>
+          <li><a onClick="contactForm()">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -29,7 +31,46 @@
       <h1>Duquesne Incline</h1>
     </div>
     <main>
-      <img src="static/images/wide.png" alt="View from the observation deck at the incline" width="100%" class="rounded-10" />
+      <div class="mailinglist-over-img">
+        <button onclick="mailSignup()">Join our Mailing List</button>
+        <img src="static/images/wide.png" alt="View from the observation deck at the incline" class="rounded-10" />
+      </div>
+      <div>
+        <h1>Rates &amp; Hours</h1>
+        <p>The incline is open 365 days a year from 6:30 AM to 12:30 AM, with free admission for Pitt, CMU, and Chatham university students with ID and special rates for groups of 10 people or more apply (see the <a href="views/visit.html">Visit</a> page for more
+          information). Otherwise, fares are:
+          <div class="card-row rates-row">
+            <div class="card">
+              <h3>Adults (Ages 12-64)</h3>
+              <div class="rates-pair">
+                <div class="rate-side">
+                  <span class="rate-amount">$2.50</span>
+                  <span class="rate-context">Each Way</span>
+                </div>
+                <hr />
+                <div class="rate-side">
+                  <span class="rate-amount">$5.00</span>
+                  <span class="rate-context">Round Trip</span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Children (Ages 6-11)</h3>
+              <div class="rates-pair">
+                <div class="rate-side">
+                  <span class="rate-amount">$1.25</span>
+                  <span class="rate-context">Each Way</span>
+                </div>
+                <hr />
+                <div class="rate-side">
+                  <span class="rate-amount">$2.50</span>
+                  <span class="rate-context">Round Trip</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p>
+      </div>
       <div>
         <h1>Frequently Asked Questions</h1>
         <p>
@@ -112,7 +153,15 @@
     <footer>
       <img src="static/images/footer.png" alt="An outside view of the incline building" height="100%" width="auto" />
       <p>&copy; 2025 The Duquesne Incline</p>
-      <p>FOOTER TEXT</p>
+      <address>
+        <span>Address: <a href="views/visit.html">1197 W Carson St, Pittsburgh, PA 15219</a></span>
+        <br />
+        Phone Number: <a href="tel:+4123811665">412.381.1665</a>
+        <br />
+        Fax: 412.381.1943
+        <br />
+        Email: <a href="mailto:duq.incline@duquesneincline.org">duq.incline@duquesneincline.org</a>
+      </address>
     </footer>
   </body>
 </html>

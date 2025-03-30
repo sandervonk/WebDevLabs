@@ -7,9 +7,9 @@
     <meta name="keywords" content="Carnegie Mellon University, Information Systems" />
     <meta name="description" content="Sander Vonk professional website" />
     <link rel="stylesheet" href="../static/css/styles.css" />
-    <title>The Duquesne Incline</title>
+    <title>The Duquesne Incline | Visit</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-    <script src="../static/js/script.js" defer type="module"></script>
+    <script src="../static/js/script.js" type="module"></script>
     <link rel="stylesheet" href="../static/css/weather.css" />
     <link rel="stylesheet" href="../static/js/util/util.css" />
     <link rel="stylesheet" href="../static/js/util/theme.css" />
@@ -20,11 +20,11 @@
       <h2>The Duquesne Incline</h2>
       <nav>
         <ul>
-          <li><a href="../" match="/project">Home</a></li>
-          <li><a href="visit.html" match="views/visit">Visit</a></li>
-          <li><a href="experiences.html" match="views/experiences">Experiences</a></li>
-          <li><a href="shop.html" match="views/shop">Shop</a></li>
-          <li><a contact>Contact</a></li>
+          <li><a href="../" data-match="/project">Home</a></li>
+          <li><a href="visit.html" data-match="views/visit">Visit</a></li>
+          <li><a href="experiences.html" data-match="views/experiences">Experiences</a></li>
+          <li><a href="shop.html" data-match="views/shop">Shop</a></li>
+          <li><a onClick="contactForm()">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -34,7 +34,7 @@
         <div id="weather">Loading...</div>
       </div>
       <div>
-        <h1>Our Location</h1>
+        <h1 id="directions">Our Location</h1>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.6008009571087!2d-80.01754790000001!3d40.43983759999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f6af24753323%3A0x391d7b79fc54985b!2sDuquesne%20Incline!5e0!3m2!1sen!2sus!4v1743348736943!5m2!1sen!2sus"
           width="100%"
@@ -99,7 +99,15 @@
     <footer>
       <img src="../static/images/footer.png" alt="An outside view of the incline building" height="100%" width="auto" />
       <p>&copy; 2025 The Duquesne Incline</p>
-      <p>FOOTER TEXT</p>
+      <address>
+        <span>Address: <a href="visit.html#directions">1197 W Carson St, Pittsburgh, PA 15219</a></span>
+        <br />
+        Phone Number: <a href="tel:+4123811665">412.381.1665</a>
+        <br />
+        Fax: 412.381.1943
+        <br />
+        Email: <a href="mailto:duq.incline@duquesneincline.org">duq.incline@duquesneincline.org</a>
+      </address>
     </footer>
   </body>
 </html>
