@@ -4,7 +4,7 @@ $(document).ready(function () {
   path = decodeURIComponent(path).replace(".html", "");
 
   $("header nav a").each(function () {
-    let match = $(this).attr("match");
+    let match = $(this).attr("data-match");
     if (path.endsWith(match)) {
       $(this).addClass("active");
     }
@@ -61,6 +61,7 @@ function openLightbox(srcArray) {
   makeLightbox(html);
 }
 
+import { Toast } from "./util/util.js";
 // Handle weather if needed by page (page will have loaded needed css)
 // Inspired by a workshop I taught:
 // Code:   https://mvhacks-code.svonk.me
@@ -69,12 +70,62 @@ function openLightbox(srcArray) {
 // Uses toasts from adapted https://npmjs.com/@svonk/util (local in static/js/util)
 import { getWeatherHTML } from "./weather.js";
 const $weather = $("#weather");
-if ($weather.length > 0)
+if ($weather.length > 0) {
   getWeatherHTML().then((html) => {
     $weather.html(html);
   });
-function mailSignup() {}
-function contactForm() {}
+}
+
+function mailSignup() {
+  const html = `
+    <div class="lightbox_inner mail_form">
+        <h2>Sign up for our mailing list</h2>
+        <form class="mail_form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="sms">Receive SMS:</label>
+            <input type="checkbox" id="sms" name="sms">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" pattern="[0-9]{5}">
+            <button type="submit">Submit</button>
+        </form>
+    </div>`;
+  let $html = $(html);
+  $html.find("form").submit((e) => {
+    e.preventDefault();
+    new Toast("Thank you for signing up!", "default", 3000, "./static/js/util/assets/success-icon.png");
+    $(".lightbox").remove();
+  });
+  makeLightbox($html);
+}
+
+function contactForm() {
+  const html = `
+        <div class="lightbox_inner mail_form">
+            <h2>Contact Us</h2>
+            <form class="mail_form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required minlength="2" maxlength="500"></textarea>
+                <br/>
+                <button type="submit">Submit</button>
+            </form>
+        </div>`;
+  let $html = $(html);
+  $html.find("form").submit((e) => {
+    e.preventDefault();
+    new Toast("Thank you for contacting us, we'll reach out shortly!", "default", 3000);
+    $(".lightbox").remove();
+  });
+  makeLightbox($html);
+}
 // force export from module to page
 window.contactForm = contactForm;
 window.mailSignup = mailSignup;

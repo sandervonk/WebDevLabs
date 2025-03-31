@@ -117,10 +117,32 @@ header {
 }
 footer {
   align-items: space-between;
-  p {
+  > * {
     flex-basis: min-content;
     flex-grow: 1;
     text-align: center;
+    &.social-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-flow: column nowrap;
+      .social-links {
+        display: flex;
+        flex-flow: row nowrap;
+        height: 40px;
+        gap: 10px;
+        .social-link {
+          height: 40px;
+          width: 40px;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
   }
   height: 200px;
 }
@@ -365,6 +387,11 @@ main {
       font-size: 15vw !important;
     }
   }
+  footer {
+    > img {
+      display: none;
+    }
+  }
   main {
     .card-row.rates-row {
       flex-flow: column;
@@ -398,6 +425,9 @@ main {
     max-width: 80%;
     width: 700px;
     height: 500px;
+    &:has(.mail_form) {
+      max-width: 400px;
+    }
     .lightbox_inner {
       background-color: var(--background);
       padding: 10px;
@@ -407,6 +437,14 @@ main {
       align-items: center;
       gap: 10px;
       height: 100%;
+      .mail_form,
+      &.mail_form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+      }
       button {
         padding: 20px 20px;
         border: none;
