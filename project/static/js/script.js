@@ -1,9 +1,11 @@
+// Highlight the active path whenever possible
 $(document).ready(function () {
   let path = window.location.pathname;
   path = path.replace(/\/$/, "");
   path = decodeURIComponent(path).replace(".html", "");
 
   $("header nav a").each(function () {
+    // data- attr properties are standard practice and shouldn't flag w3
     let match = $(this).attr("data-match");
     if (path.endsWith(match)) {
       $(this).addClass("active");
@@ -11,6 +13,7 @@ $(document).ready(function () {
   });
 });
 
+// From user feedback: allow single-axis scrolling on cards
 $(".card-row").on("wheel", (e) => {
   const $target = $(e.target).closest(".card-row");
   // check that x scroll component is not greater than y scroll component
@@ -20,6 +23,7 @@ $(".card-row").on("wheel", (e) => {
   }
 });
 
+// Generate a lightbox with a close button and background click to close around the jquery element template
 function makeLightbox(html) {
   const lightbox = $(`
     <div class="lightbox">
@@ -42,7 +46,7 @@ function makeLightbox(html) {
   });
   $("body").append(lightbox);
 }
-// make contents with left right arrows and listeners for lightbox
+// Make the carousel lightbox with left and right buttons from img src-text pairs
 function openLightbox(srcArray) {
   let html = `
     <div class="lightbox_inner">
@@ -70,6 +74,7 @@ function openLightbox(srcArray) {
   makeLightbox(html);
 }
 
+// BELOW: weather logic
 import { Toast } from "./util/util.js";
 // Handle weather if needed by page (page will have loaded needed css)
 // Inspired by a workshop I taught:
@@ -85,6 +90,7 @@ if ($weather.length > 0) {
   });
 }
 
+// Generate newsletter signup form
 function mailSignup() {
   const html = `
     <div class="lightbox_inner mail_form">
@@ -112,6 +118,7 @@ function mailSignup() {
   makeLightbox($html);
 }
 
+// Generate contact form
 function contactForm() {
   const html = `
         <div class="lightbox_inner mail_form">
@@ -135,7 +142,8 @@ function contactForm() {
   });
   makeLightbox($html);
 }
-// force export from module to page
+
+// Force export from module type to page
 window.contactForm = contactForm;
 window.mailSignup = mailSignup;
 window.openLightbox = openLightbox;

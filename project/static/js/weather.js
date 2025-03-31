@@ -1,5 +1,6 @@
 import { InfoToast, ErrorToast } from "./util/util.js";
 
+// constant values for the weather api
 const API_KEY = "384f5f36aa137ad1e88da99c56ace135";
 const LOCATION = "Pittsburgh";
 const UNITS = "imperial";
@@ -8,6 +9,7 @@ function getUnitSymbol() {
   return "°F";
 }
 
+// Use the OpenWeatherMap API to get weather data!
 function getWeatherData(callback, type = "forecast") {
   const requestUrl = `https://api.openweathermap.org/data/2.5/${type}?q=${encodeURIComponent(LOCATION)}&appid=${API_KEY}&units=${UNITS}`;
 
@@ -22,6 +24,7 @@ function getWeatherData(callback, type = "forecast") {
   });
 }
 
+// generate a preview of the weather for a day (used for the line of forecast cards)
 function makePreviewHTML(day_raw) {
   if (!day_raw || typeof day_raw !== "object" || !(day_raw.main && day_raw.weather && day_raw.dt)) {
     return;
@@ -45,6 +48,7 @@ function makePreviewHTML(day_raw) {
     main: day_raw.weather[0].main,
   };
 
+  // generate a card for the day with a click event to allow it to toast more information
   return $(`
     <div class="forecast_card" weather=${day.main.toLowerCase().replace(" ", "")}>
       <img class="forecast_card__icon" alt="${day.desc}" src="../static/images/weather/${day.icon}" />
