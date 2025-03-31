@@ -97,8 +97,11 @@ function getWeatherHTML() {
     });
 
     forecastRow.on("wheel", (e) => {
-      e.preventDefault();
-      forecastRow.scrollLeft(forecastRow.scrollLeft() + e.originalEvent.deltaY);
+      // check that x scroll component is not greater than y scroll component
+      if (Math.abs(e.originalEvent.deltaX) < Math.abs(e.originalEvent.deltaY)) {
+        e.preventDefault();
+        forecastRow.scrollLeft(forecastRow.scrollLeft() + e.originalEvent.deltaY);
+      }
     });
   });
 }
