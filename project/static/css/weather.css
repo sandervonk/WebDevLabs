@@ -1,6 +1,8 @@
 /* ------------------------------------------------------------------------------ */
 /* - © 2023 Sander Vonk | Requires permission for replication or commercial use - */
 /* ------------------------------------------------------------------------------ */
+/* Inspired by my own demo code (see script.js), with styles changed drastically to fit within a single page component */
+/* selector names align with expected content structure */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
 
 :root {
@@ -21,8 +23,9 @@ body.dark {
   --anim-out: 0.5s;
 }
 
+/* force styles to only apply within the #weather element container */
 #weather {
-  /* wait for content to load */
+  /* wait for content to load (h2 is loaded title), otherwise don't show background */
   &:has(h2) {
     background: var(--page-bg);
     border-radius: 10px;

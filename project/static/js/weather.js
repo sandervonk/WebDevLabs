@@ -57,6 +57,7 @@ function makePreviewHTML(day_raw) {
   });
 }
 
+// generate usable html that is inserted into the page #weather
 function getWeatherHTML() {
   return new Promise((resolve) => {
     const weatherContainer = $('<div class="weather-container"></div>');
@@ -85,6 +86,7 @@ function getWeatherHTML() {
         forecastRow.append(makePreviewHTML(day));
       });
       const weatherImgPath = "../static/images/weather/";
+      // fill text into template
       getWeatherData((current) => {
         $(document.body).toggleClass("dark", current.weather[0].icon.includes("n"));
         $("#current_temp", weatherContainer).text(current.main.temp);
