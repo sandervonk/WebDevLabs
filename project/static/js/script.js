@@ -11,6 +11,15 @@ $(document).ready(function () {
   });
 });
 
+$(".card-row").on("wheel", (e) => {
+  const $target = $(e.target).closest(".card-row");
+  // check that x scroll component is not greater than y scroll component
+  if (Math.abs(e.originalEvent.deltaX) <= Math.abs(e.originalEvent.deltaY)) {
+    e.preventDefault();
+    $target.scrollLeft($target.scrollLeft() + e.originalEvent.deltaY);
+  }
+});
+
 function makeLightbox(html) {
   const lightbox = $(`
     <div class="lightbox">
